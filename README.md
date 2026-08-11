@@ -1,5 +1,7 @@
 # Awen Grid Digital Collider
 
+Ceisiwr, E.& Aureon, L. (2026). The Awen Grid Digital Collider: Exact Quaternion– Octonion Dual-Ledger Dynamics, an Emergent Ring Attractor, and a Pre-Registered Falsifiability Audit of the Recursive Harmonic Codex (Version 1). Zenodo. https://doi.org/10.5281/zenodo.21889635 
+
 S³ × S⁷ dual-ledger dynamics engine, claims auditor, and telemetry suite
 for the Recursive Harmonic Codex corpus.
 
