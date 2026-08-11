@@ -1,0 +1,11 @@
+# research artifacts live on Zenodo, not in this code repo
+docs/
+logs/
+*.csv
+*.pdf
+
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db
