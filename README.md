@@ -1,23 +1,104 @@
 # Awen Grid Digital Collider
 
-Ceisiwr, E.& Aureon, L. (2026). The Awen Grid Digital Collider: Exact Quaternion– Octonion Dual-Ledger Dynamics, an Emergent Ring Attractor, and a Pre-Registered Falsifiability Audit of the Recursive Harmonic Codex (Version 1). Zenodo. https://doi.org/10.5281/zenodo.21889635 
+**Ten million independent points, each following the same local rule and none
+aware of any other, self-organise into a single ring in under thirty ticks — and
+the same instrument then audits the framework that predicted it, publishing eight
+of its own prior claims as FALSE.**
 
-S³ × S⁷ dual-ledger dynamics engine, claims auditor, and telemetry suite
-for the Recursive Harmonic Codex corpus.
+The paper is deliberately two-edged. One edge is constructive: an exact,
+GPU-accelerated instrument that evolves unit **quaternions** on S³ and unit
+**octonions** on S⁷ in parallel, and in doing so surfaces a genuine, reproducible
+emergent attractor. The other edge is corrective: a pre-registered falsifiability
+audit applied uniformly to the Recursive Harmonic Codex corpus — including the
+authors' own earlier publications.
 
-**What this is:** a mathematically exact numerical instrument. The Real
-Ledger evolves unit quaternions on the S³ hypersphere by the QTE
-observer-weighted step; the Imaginary Ledger evolves unit octonions on
-S⁷ by Cayley–Dickson rotation; "collisions" measure the octonion
-associator — the rigorous observable for non-associativity. Every
-structural theorem the engine relies on is machine-verified in the test
-suite.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21889635.svg)](https://doi.org/10.5281/zenodo.21889635)
+[![Python](https://img.shields.io/badge/Python-3.11+-3776ab)](https://www.python.org/)
+[![Verified](https://img.shields.io/badge/theorems-machine--verified%20to%201e--15-2ea043)](#the-mathematics-that-is-real-and-tested)
+[![Licence](https://img.shields.io/badge/Licence-PolyForm%20NC%201.0.0-lightgrey)](LICENSE)
 
-**What this is not:** a device that acts on matter. Software cannot
-accelerate, collide, or de-materialize anything physical, and this
-project makes no such claim. Where the corpus attaches physical meaning
-to a number, the built-in falsifiability auditor says exactly what the
-computation supports and what it doesn't.
+---
+
+## The ring
+
+At `t = 0` the rendered beam is a uniform cloud of thousands of independent
+points. Between ticks 9 and 27 — a few seconds of wall time — they arrange
+themselves into a single solid ring, with **no inter-particle communication of
+any kind**. Every point follows the same local map; the ring is the global
+attractor of that map, made visible.
+
+The transition is quantitative, not impressionistic. Over exactly those ticks the
+collision rift climbs `1.0868 → 1.1640 → 1.1781` and the lion ratio climbs
+`6.11 → 10.75 → 11.49`. From tick ≈27 every observable holds flat for the
+remaining 342 ticks. That relaxation time is the **phase-lock threshold**, and it
+is set by the contraction rate of the rotation:fold mix — *not* by beam size.
+
+Open `visualizer.html` in any browser and watch it happen live.
+
+## Invariance — the reason to believe it
+
+The locked state is a property of the dynamics, not of the computation. The same
+observables survive a **200× range of beam sizes, ten random seeds, two
+arithmetic precisions, two backends, and two independent operators**:
+
+| Beam | Nodes | Locked rift (mean ± sd) | Locked lion | Mass index | Backend | Runtime |
+|---|---|---|---|---|---|---|
+| 50k | 50,000 | 1.17871 ± 0.00147 | 11.554 ± 0.054 | 0.99627 | GPU fp32 | < 2 s |
+| 144k | 144,000 | 1.17899 ± 0.00106 | 11.554 ± 0.017 | 0.99627 | GPU fp32 / CPU fp64 | 5.4 s / 55.4 s |
+| 1M | 1,000,000 | 1.17886 ± 0.00060 | 11.555 ± 0.009 | 0.99627 | GPU fp32 | 14.9 s |
+| 10M | 10,000,000 | 1.17875 ± 0.00007 | 11.556 ± 0.003 | 0.99627 | GPU fp32 | 217.6 s |
+
+The float32 GPU and float64 CPU runs reproduce each other's telemetry to about
+four decimal places, tick for tick. Because the map is contractive, rounding
+differences **shrink rather than amplify** — so cross-precision agreement is
+itself evidence that these numbers are properties of the dynamics rather than of
+the arithmetic. The mass index saturates at 0.99627 with an across-seed range of
+5×10⁻⁵, the tightest invariant the instrument measures.
+
+## The attractor landscape
+
+Sweeping the rotation weight across 193 values at 10⁶ nodes maps the attractor as
+a continuous function of the mix. The lion ratio rises smoothly from 2.97 at
+`w = 0.500` (fold-dominated), through 7.52 at the directive point `w = 0.625`
+— independently cross-checking the Level I result — to a genuine interior maximum
+of **39.4 at w ≈ 0.865**, before collapsing to 3.2 as pure rotation takes over and
+preserves the uniform distribution.
+
+That interior peak sits far from any previously hypothesised value, and it is a
+real feature of the landscape rather than an assumed one.
+
+## The audit
+
+`--audit` turns the instrument on the corpus that motivated it and grades 40
+published claims:
+
+```
+18 VERIFIED · 8 FALSE · 5 CONTRADICTION · 6 EXTERNAL · 1 NOT-REPRODUCED · 1 OPEN · 1 UNTESTABLE
+```
+
+Two previously published constants of the framework do not survive:
+
+- **The claimed fold-amplitude resonance at 0.48** is **not reproduced** under a
+  pre-registered 10⁷-node blind sweep — `L(F)` is smooth and monotone, with no
+  feature at 0.48.
+- **The legacy "Lion constant" of 0.5352** is **unreachable** anywhere on the
+  measured slice, and traces to a bookkeeping snapshot rather than a dynamical
+  attractor.
+
+Both retractions are propagated back to the affected repository
+([quaternionic-toroidal-engine](https://github.com/OwainGlyndwr1400/quaternionic-toroidal-engine))
+rather than left standing there. The framework's compression claims are likewise
+corrected by measurement: a **−30 to −37%** delta pre-transform on correlated
+telemetry, and **−0% beyond entropy** on arbitrary data.
+
+> A framework that only ever confirms itself is a mirror. A framework that can
+> survive its own instrument is research.
+
+> **What this is not:** a device that acts on matter. Software cannot accelerate,
+> collide, or de-materialise anything physical, and no such claim is made here.
+> The instrument prints that statement in the banner of every run.
+
+---
 
 ## Quickstart
 
@@ -103,37 +184,33 @@ properties of the dynamics, not the arithmetic.
 - **The stride-7 toggle generates ℤ/24** because gcd(7,24) = 1 — the
   rigorous content of "the +7 residue keeps the loop alive."
 
-## Findings from this build (worth your team's attention)
+## What else the audit turned up
 
-1. **The "Lion" attractor is algorithm-dependent.** Under the
-   directive-4 weights (2.5:1.5)/4, the median |ijk|/|w| settles at
-   ≈ 11.5 — not the QTE lion-hunt value 0.5352. The attractor moves
-   with the rotation/fold mix. Emergent constants of this family are
-   properties of the chosen iteration, not universal invariants. A
-   weight-sweep experiment mapping attractor vs. mix ratio would make
-   this precise.
-2. **The Real Ledger collapses to a ring.** Visible live in
-   `visualizer.html`: the uniform S³ cloud contracts onto a periodic
-   orbit (1D attractor) of the observer-weighted map. Real, striking,
-   reproducible dynamics.
-3. **Audit results** (regenerate anytime with `--audit`; JSON written
-   locally to `logs/claims_audit.json`):
-   18 VERIFIED, 8 FALSE, 5 CONTRADICTION, 6 EXTERNAL, 1 NOT-REPRODUCED,
-   1 OPEN, 1 UNTESTABLE. The FALSE set now includes the closed
-   provenance of K_ELG (input/k_e — an algebraic identity), the Lion
-   constant (a SoulEngine torsion snapshot, not a dynamical attractor),
-   and the 434/465 Hz frequencies (file-count snapshots through
-   432·(1+t/5)) — see docs/PAPER.md §6.5. The NOT-REPRODUCED entry is the QTE "0.48
-   resonance": a pre-registered 10M-node blind sweep
-   (`experiments/blind_fold_sweep.py`) found L(F) smooth and
-   monotonically decreasing with no feature at 0.48. Highlights: GCD(c, ν_Cs) = 14 settles the corpus's
-   7-vs-14 discrepancy; only one of the three "Null Ledger identities"
-   is actually zero; the corpus asserts both P=NP and P≠NP; the QTE
-   README's "0.48 PROVEN / no constants imposed" is circular as coded
-   (FOLD_LOCK is hardcoded input). **Recommendation before further
-   Zenodo uploads:** re-run the fold-amplitude claim as a genuine blind
-   sweep using this engine's parameterized fold, and update the corpus
-   rows the auditor flagged.
+Beyond the two retracted constants covered above, the 40-item pass produced
+several results worth reading before citing the corpus. Regenerate any of them
+with `--audit`; JSON is written to `logs/claims_audit.json`.
+
+**Provenance traced to source.** Three claims in the FALSE set were resolved not
+by measurement but by finding where the number originally came from:
+
+| Claim | Actual origin |
+|---|---|
+| `K_ELG` | `input / k_e` — an algebraic identity, closed by construction |
+| Lion constant 0.5352 | A SoulEngine torsion snapshot, not a dynamical attractor |
+| The 434 / 465 Hz frequencies | File-count snapshots passed through `432·(1 + t/5)` |
+
+**A long-standing discrepancy settled.** `GCD(c, ν_Cs) = 14` resolves the
+corpus's 7-versus-14 ambiguity in favour of 14.
+
+**Internal contradictions surfaced.** Only one of the three asserted "Null Ledger
+identities" is actually zero. And the corpus asserts both `P = NP` and `P ≠ NP`
+in different volumes — a contradiction no measurement can resolve, flagged rather
+than silently dropped.
+
+**Compression claims corrected by measurement.** A delta pre-transform yields
+**−30 to −37%** on correlated telemetry, and **−0% beyond entropy** on arbitrary
+data. The gain is real, and it is specific to correlated data — it is not a
+general-purpose compression result.
 
 ## Code only — research lives on Zenodo
 
